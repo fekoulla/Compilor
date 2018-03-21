@@ -12,7 +12,7 @@ const [nodeLocation, karcLocation, ...options] = args;
 
 const entryPoint = options.length != 0
   ? options[0]
-  : 'index.js';
+  : 'index.php';
   
 if (fs.existsSync(entryPoint)) {
   try {

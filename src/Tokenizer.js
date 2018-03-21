@@ -21,7 +21,8 @@ export default class Tokenizer{
 	}
 	
 	addToken(input){
-		let token = TokenFactory.create(input, this.cursor);
+		let token = TokenFactory.create(input, this.cursor, this.cursor_y);
+        console.log(token);
 		if(!token){
 			throw `syntax error at ${this.cursor_y}:${this.cursor_x}`
 		}else{
@@ -39,6 +40,8 @@ export default class Tokenizer{
 				case 'virgule':
 				case 'parenthesis-start':
 				case 'parenthesis-end':
+                case 'variable-declaration':
+                case 'operator':
 					this.cursor++
 					break;
 				default:

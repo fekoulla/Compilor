@@ -21,6 +21,8 @@ export default class ASTParser{
 				case 'parenthesis-end':
 				case 'identifier':
 				case 'instruction-end':
+                case 'variable-declaration':
+                case 'operator':
 					continue;
 				default:
 					let exp = ExpressionFactory.create(cursor, tokens);
